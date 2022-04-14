@@ -120,7 +120,8 @@ onnx2ncnn version-slim-640.onnx version-slim-640.param version-slim-640.bin
 注意让anaconda自动设置path（注意让anaconda在path中的位置靠下，否则里面的低版本的protobuf会优先使用）。
 安装机器学习包：
 ```shell
-conda install pytorch
+# 按照官网和电脑配置安装pytorch
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
 ```
 
 ### 2、pycharm
