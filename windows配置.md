@@ -112,6 +112,27 @@ onnx2ncnn version-slim-640.onnx version-slim-640.param version-slim-640.bin
 
 在Settings->Build->Toolchains选择自己安装的minGW
 
+### 7、tnn
+git下载后配置cmake
+```text
+配置cmake路径：tnn路径
+配置输出路径：tnn路径\cmake\mingw-build
+点击config，选择:MinGW Makefiles
+点击Specify native compilers
+设置编译器：
+C编译器：C:/msys64/mingw64/bin/gcc.exe
+C++编译器：C:/msys64/mingw64/bin/g++.exe
+设置输出目录：CMAKE_INSTALL_PREFIX=C:/lib/tnn
+使用静态库：TNN_BUILE_SHARED=OFF
+```
+
+安装
+```shell
+cd tnn路径\cmake\mingw-build
+mingw32-make
+# 手动将编译出来的lib和include拷贝到c:\lib\tnn
+```
+
 ## 三、python环境
 
 ### 1、anaconda
