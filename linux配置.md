@@ -25,7 +25,7 @@ tar -zxv -f cmake-3.9.2.tar.gz
 cd cmake-3.9.2
 ./bootstrap
 sudo make && make install
-
+https://blog.csdn.net/yuanzhoulvpi/article/details/122938078
 ```
 
 ### 3、安装cuda
