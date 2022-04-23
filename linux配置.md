@@ -1,5 +1,19 @@
 # linux配置
 
+```shell
+注意使用虚拟机工具设置共享文件夹
+sudo  rm /var/lib/dpkg/lock-frontend
+sudo rm /var/lib/dpkg/lock
+apt-get install vim
+sudo vim /etc/profile
+sudo dpkg-reconfigure dash
+# 然后选择 no 或者 否 ，并确认。
+```
+
+
+
+
+
 ## 一、C++环境
 
 ### 1、更新gcc
@@ -27,9 +41,8 @@ sudo apt-get install libssl-dev
 每次编译安装都出错，还是下载编译好的吧
 wget https://cmake.org/files/v3.11/cmake-3.11.0-rc1-Linux-x86_64.tar.gz
 tar -zxv -f cmake-3.11.0-rc1-Linux-x86_64.tar.gz
-mv cmake-3.11.0-rc1-Linux-x86_64 /home/liu/
 gedit ~/.bashrc
-export PATH=/home/liu/cmake-3.11.0-rc1-Linux-x86_64/bin:$PATH
+export PATH=/home/yanyu/cmake-3.11.0-rc1-Linux-x86_64/bin:$PATH
 # 然后source ~/.bashrc
 cmake --version
 ```
@@ -41,7 +54,12 @@ cmake --version
 ```shell
 wget https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda_11.3.1_465.19.01_linux.run
 sudo sh cuda_11.3.1_465.19.01_linux.run
-https://blog.csdn.net/CC977/article/details/122789394
+# 因为是虚拟机，所以注意不要勾选显卡驱动：Driver
+gedit  ~/.bashrc
+
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+source ~/.bashrc
 ```
 
 
@@ -53,7 +71,8 @@ https://blog.csdn.net/CC977/article/details/122789394
 ### 1、 安装miniconda
 
 ```shell
-export PATH=/home/liu/miniconda3/bin:$PATH
+source ~/.bashrc
+export PATH=/home/yanyu/miniconda3/bin:$PATH
 source ~/.bashrc
 # 看是否成功
 conda info
